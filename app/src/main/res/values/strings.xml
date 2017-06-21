@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Meditation</string>
+
+    <string name="slide_1_desc">Meditation made simple</string>
+    <string name="slide_2_desc">Focus on what matters to you</string>
+    <string name="slide_3_desc">Learn in just 10 minutes a day</string>
+
+    <string name="create_account">Create an Account</string>
+    <string name="log_in">Already have an account? Log In</string>
 </resources>
