@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:layout_gravity="center"
+    android:id="@+id/lin_lay"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="-50dp"
+        android:id="@+id/splash_img"
+        android:src="@drawable/splash"
+        android:layout_marginBottom="10dp"/>
+    <com.blacksite.meditation.view.MyTextView
+        android:id="@+id/splash_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/slide_title"
+        android:textColor="@color/title_color"
+        android:text="@string/app_name"/>
+
+</LinearLayout>

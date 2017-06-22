@@ -2,6 +2,7 @@ package com.blacksite.meditation;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.view.PagerAdapter;
@@ -9,6 +10,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +23,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.blacksite.meditation.view.MyTextView;
+
+import java.util.Locale;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -101,7 +106,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void launchHomeScreen() {
-        prefManager.setFirstTimeLaunch(false);
+        //prefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
         finish();
     }
@@ -112,30 +117,14 @@ public class WelcomeActivity extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             addBottomDots(position);
-
-            // changing the next button text 'NEXT' / 'GOT IT'
-            /*if (position == layouts.length - 1) {
-                // last page. make button text to GOT IT
-                btnNext.setText(getString(R.string.start));
-                btnSkip.setVisibility(View.GONE);
-            } else {
-                // still pages are left
-                btnNext.setText(getString(R.string.next));
-                btnSkip.setVisibility(View.VISIBLE);
-            }*/
         }
-
         @Override
         public void onPageScrolled(int arg0, float arg1, int arg2) {
-
         }
-
         @Override
         public void onPageScrollStateChanged(int arg0) {
-
         }
     };
-
     /**
      * Making notification bar transparent
      */
@@ -183,5 +172,39 @@ public class WelcomeActivity extends AppCompatActivity {
             View view = (View) object;
             container.removeView(view);
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.e("logger", "onStart");
+        changeSystemLocaleToEN();
+        calculateScreen();
+    }
+
+    private void calculateScreen() {
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int statusBarHeight = getStatusBarHeight();
+        int app_height = metrics.heightPixels - statusBarHeight;
+
+        viewPager.getLayoutParams().height = (int) (0.61*app_height);
+    }
+    public int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
+    public void changeSystemLocaleToEN(){
+        String languageToLoad = "en";
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
     }
 }
