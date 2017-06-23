@@ -78,7 +78,7 @@ public class WelcomeActivity extends AppCompatActivity {
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchHomeScreen();
+                launchSignUpScreen();
             }
         });
     }
@@ -105,6 +105,11 @@ public class WelcomeActivity extends AppCompatActivity {
         return viewPager.getCurrentItem() + i;
     }
 
+    private void launchSignUpScreen() {
+        //prefManager.setFirstTimeLaunch(false);
+        startActivity(new Intent(WelcomeActivity.this, SignUpActivity.class));
+        //finish();
+    }
     private void launchHomeScreen() {
         //prefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, MainActivity.class));

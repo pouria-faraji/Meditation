@@ -52,7 +52,7 @@
         android:layout_marginBottom="10dp"
         android:clickable="true"
         android:focusable="true"
-        android:background="@drawable/btn_create_account_background">
+        android:background="@drawable/btn_3d_create_account_background">
         <com.blacksite.meditation.view.MyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

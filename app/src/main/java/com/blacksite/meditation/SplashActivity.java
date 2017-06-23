@@ -94,15 +94,15 @@ public class SplashActivity extends AppCompatActivity {
     public void onPause() {
         super.onPause();
         Log.e("logger", "onPause");
-        if (splashThread.isAlive()) {
-            splashThread.interrupt();
-        }
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
     @Override
     public void onStop() {
         super.onStop();
         Log.e("logger", "onStop");
+        if (splashThread.isAlive()) {
+            splashThread.interrupt();
+        }
     }
 
 

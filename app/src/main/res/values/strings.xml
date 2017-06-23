@@ -7,4 +7,9 @@
 
     <string name="create_account">Create an Account</string>
     <string name="log_in">Already have an account? Log In</string>
+
+    <string name="sign_up_desc">Sign up with Email</string>
+    <string name="sign_up_btn">Get Started</string>
+
+    <string name="password_character">8 characters or more</string>
 </resources>

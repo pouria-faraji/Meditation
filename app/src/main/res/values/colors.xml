@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#fafafa</color>
     <color name="colorPrimaryDark">#d1d1d1</color>
     <color name="colorAccent">#FF4081</color>
 
@@ -9,10 +9,14 @@
     <color name="slide2_desc_color">#fc5454</color>
     <color name="slide3_desc_color">#36ab5f</color>
 
-    <color name="text_color">#d6d6d6</color>
+    <color name="text_color">#fcfcfc</color>
 
-    <color name="btn_create_account_color">#36ab5f</color>
-    <color name="btn_create_account_color_pressed">#24703f</color>
+    <color name="btn_create_account_color">#36ab67</color>
+    <color name="btn_create_account_color_outer_shadow">#21693a</color>
+    <color name="btn_create_account_color_pressed">#339e59</color>
+
+    <color name="form_background">#cccccc</color>
+    <color name="form_background_selected">#f2f2f2</color>
 
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#acacac</color>
