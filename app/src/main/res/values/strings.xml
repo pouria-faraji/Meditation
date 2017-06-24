@@ -11,5 +11,9 @@
     <string name="sign_up_desc">Sign up with Email</string>
     <string name="sign_up_btn">Get Started</string>
 
+    <string name="login_desc">Welcome Back</string>
+    <string name="login_btn">Log In</string>
+
     <string name="password_character">8 characters or more</string>
+    <string name="forget_password">Forgot your password?</string>
 </resources>

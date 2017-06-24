@@ -34,11 +34,14 @@ public class WelcomeActivity extends AppCompatActivity {
     private TextView[] dots;
     private int[] layouts;
     private RelativeLayout btnCreateAccount;
+    private MyTextView btnLogin;
     private PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        changeSystemLocaleToEN();
 
         // Checking for first time launch - before calling setContentView()
         prefManager = new PrefManager(this);
@@ -58,6 +61,7 @@ public class WelcomeActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
         btnCreateAccount = (RelativeLayout) findViewById(R.id.btn_create_account);
+        btnLogin = (MyTextView) findViewById(R.id.log_in);
 
         // layouts of all welcome sliders
         // add few more layouts if you want
@@ -79,6 +83,12 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 launchSignUpScreen();
+            }
+        });
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchLoginScreen();
             }
         });
     }
@@ -108,6 +118,11 @@ public class WelcomeActivity extends AppCompatActivity {
     private void launchSignUpScreen() {
         //prefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, SignUpActivity.class));
+        //finish();
+    }
+    private void launchLoginScreen() {
+        //prefManager.setFirstTimeLaunch(false);
+        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
         //finish();
     }
     private void launchHomeScreen() {
@@ -183,7 +198,7 @@ public class WelcomeActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         Log.e("logger", "onStart");
-        changeSystemLocaleToEN();
+
         calculateScreen();
     }
 

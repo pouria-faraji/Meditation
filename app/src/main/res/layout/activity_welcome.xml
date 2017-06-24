@@ -64,11 +64,15 @@
     </RelativeLayout>
     <com.blacksite.meditation.view.MyTextView
         android:id="@+id/log_in"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
+        android:clickable="true"
+        android:background="@drawable/clickable_textview_background"
         android:text="@string/log_in"/>
 
 </RelativeLayout>
