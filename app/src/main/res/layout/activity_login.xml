@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <com.blacksite.meditation.view.MyTextView
+        <com.blacksite.meditation.view.MyFarsiTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -26,7 +26,7 @@
             android:textSize="15sp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:hint="Email Address"
+            android:hint="آدرس ایمیل"
             android:textCursorDrawable="@null"
             android:layout_marginBottom="10dp"
             android:background="@drawable/form_background"/>
@@ -37,7 +37,7 @@
             android:textSize="15sp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:hint="Password"
+            android:hint="رمز عبور"
             android:textCursorDrawable="@null"
             android:layout_marginBottom="0dp"
             android:background="@drawable/form_background"/>
@@ -50,7 +50,7 @@
             android:clickable="true"
             android:focusable="true"
             android:background="@drawable/btn_3d_login_background">
-            <com.blacksite.meditation.view.MyTextView
+            <com.blacksite.meditation.view.MyFarsiTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/login_btn"
@@ -67,7 +67,7 @@
                 android:layout_marginRight="10dp"
                 android:src="@drawable/forward_w"/>-->
         </RelativeLayout>
-        <com.blacksite.meditation.view.MyTextView
+        <com.blacksite.meditation.view.MyFarsiTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"

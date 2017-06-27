@@ -27,14 +27,14 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setTitle("Log In");
+        getSupportActionBar().setTitle("ورود");
 
         _email = (EditText)findViewById(R.id.input_email_login);
         _password = (EditText)findViewById(R.id.input_password_login);
         btn_login = (RelativeLayout) findViewById(R.id.btn_login);
 
-        _email.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Museo Sans W01 Rounded 300.ttf"));
-        _password.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Museo Sans W01 Rounded 300.ttf"));
+        _email.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/B Yekan_p30download.com.ttf"));
+        _password.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/B Yekan_p30download.com.ttf"));
 
         btn_login.setOnClickListener(new View.OnClickListener() {
 
@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("Authenticating...");
+        progressDialog.setMessage("در حال بررسی اطلاعات ...");
         progressDialog.show();
 
         String email = _email.getText().toString();
@@ -109,14 +109,14 @@ public class LoginActivity extends AppCompatActivity {
         String password = _password.getText().toString();
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _email.setError("enter a valid email address");
+            _email.setError("آدرس ایمیل را به شکل صحیح وارد نمایید");
             valid = false;
         } else {
             _email.setError(null);
         }
 
         if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _password.setError("between 4 and 10 alphanumeric characters");
+            _password.setError("رمز عبور باید بین 4 تا 10 کاراکتر باشد");
             valid = false;
         } else {
             _password.setError(null);

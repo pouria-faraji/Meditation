@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -22,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.blacksite.meditation.view.MyFarsiTextView;
 import com.blacksite.meditation.view.MyTextView;
 
 import java.util.Locale;
@@ -34,7 +36,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private TextView[] dots;
     private int[] layouts;
     private RelativeLayout btnCreateAccount;
-    private MyTextView btnLogin;
+    private MyFarsiTextView title, btnLogin;
     private PrefManager prefManager;
 
     @Override
@@ -56,12 +58,18 @@ public class WelcomeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_welcome);
 
+
+
         getSupportActionBar().hide();
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
         btnCreateAccount = (RelativeLayout) findViewById(R.id.btn_create_account);
-        btnLogin = (MyTextView) findViewById(R.id.log_in);
+        btnLogin = (MyFarsiTextView) findViewById(R.id.log_in);
+        title = (MyFarsiTextView) findViewById(R.id.title);
+        title.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/B Tabssom_p30download.com.ttf"));
+
+        //calculateScreen();
 
         // layouts of all welcome sliders
         // add few more layouts if you want
@@ -199,7 +207,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onStart();
         Log.e("logger", "onStart");
 
-        calculateScreen();
+
     }
 
     private void calculateScreen() {
@@ -209,6 +217,7 @@ public class WelcomeActivity extends AppCompatActivity {
         int app_height = metrics.heightPixels - statusBarHeight;
 
         viewPager.getLayoutParams().height = (int) (0.61*app_height);
+        //viewPager.getLayoutParams().height = (int) (0.51*app_height);
     }
     public int getStatusBarHeight() {
         int result = 0;

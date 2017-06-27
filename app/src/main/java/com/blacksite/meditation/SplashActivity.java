@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,8 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         getSupportActionBar().hide();
 
+        MyTextView iv_title = (MyTextView) findViewById(R.id.splash_title);
+        iv_title.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/B Tabssom_p30download.com.ttf"));
         StartAnimations();
     }
 

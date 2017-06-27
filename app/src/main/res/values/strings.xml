@@ -1,19 +1,19 @@
 <resources>
-    <string name="app_name">Meditation</string>
+    <string name="app_name">مدیتیشن</string>
 
-    <string name="slide_1_desc">Meditation made simple</string>
-    <string name="slide_2_desc">Focus on what matters to you</string>
-    <string name="slide_3_desc">Learn in just 10 minutes a day</string>
+    <string name="slide_1_desc">مدیتیشن با روشی بسیار آسان</string>
+    <string name="slide_2_desc">برروی چیزهایی که مهم است تمرکز کنید</string>
+    <string name="slide_3_desc">با روزی 10 دقیقه یاد بگیرید</string>
 
-    <string name="create_account">Create an Account</string>
-    <string name="log_in">Already have an account? Log In</string>
+    <string name="create_account">ایجاد حساب</string>
+    <string name="log_in">قبلا عضو بوده اید؟ وارد شوید</string>
 
-    <string name="sign_up_desc">Sign up with Email</string>
-    <string name="sign_up_btn">Get Started</string>
+    <string name="sign_up_desc">ایجاد حساب از طریق ایمیل</string>
+    <string name="sign_up_btn">شروع کن</string>
 
-    <string name="login_desc">Welcome Back</string>
-    <string name="login_btn">Log In</string>
+    <string name="login_desc">خوش آمدید</string>
+    <string name="login_btn">ورود</string>
 
-    <string name="password_character">8 characters or more</string>
-    <string name="forget_password">Forgot your password?</string>
+    <string name="password_character">بین 4 تا 10 کاراکتر</string>
+    <string name="forget_password">رمز عبور را فراموش کرده اید؟</string>
 </resources>

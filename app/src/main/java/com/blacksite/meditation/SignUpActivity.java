@@ -25,7 +25,7 @@ public class SignUpActivity extends AppCompatActivity {
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setTitle("Sign Up");
+        getSupportActionBar().setTitle("ایجاد حساب");
 
         fname = (EditText)findViewById(R.id.input_fname);
         lname = (EditText)findViewById(R.id.input_lname);
@@ -33,10 +33,10 @@ public class SignUpActivity extends AppCompatActivity {
         password = (EditText)findViewById(R.id.input_password);
         btn_sign_up = (RelativeLayout) findViewById(R.id.btn_sign_up);
 
-        fname.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Museo Sans W01 Rounded 300.ttf"));
-        lname.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Museo Sans W01 Rounded 300.ttf"));
-        email.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Museo Sans W01 Rounded 300.ttf"));
-        password.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Museo Sans W01 Rounded 300.ttf"));
+        fname.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/B Yekan_p30download.com.ttf"));
+        lname.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/B Yekan_p30download.com.ttf"));
+        email.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/B Yekan_p30download.com.ttf"));
+        password.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/B Yekan_p30download.com.ttf"));
 
         btn_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +57,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         final ProgressDialog progressDialog = new ProgressDialog(SignUpActivity.this);
         progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("Creating Account...");
+        progressDialog.setMessage("ایجاد حساب ...");
         progressDialog.show();
 
         String f_fname = fname.getText().toString();
@@ -97,28 +97,28 @@ public class SignUpActivity extends AppCompatActivity {
         String _password = password.getText().toString();
 
         if (_fname.isEmpty() || _fname.length() < 3) {
-            fname.setError("at least 3 characters");
+            fname.setError("نام باید دارای حداقل 3 حرف باشد");
             valid = false;
         } else {
             fname.setError(null);
         }
 
         if (_lname.isEmpty() || _lname.length() < 3) {
-            lname.setError("at least 3 characters");
+            lname.setError("نام خانوادگی باید دارای حداقل 3 حرف باشد");
             valid = false;
         } else {
             lname.setError(null);
         }
 
         if (_email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(_email).matches()) {
-            email.setError("enter a valid email address");
+            email.setError("آدرس ایمیل را به شکل صحیح وارد نمایید");
             valid = false;
         } else {
             email.setError(null);
         }
 
         if (_password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            password.setError("between 4 and 10 alphanumeric characters");
+            password.setError("رمز عبور باید بین 4 تا 10 کاراکتر باشد");
             valid = false;
         } else {
             password.setError(null);
