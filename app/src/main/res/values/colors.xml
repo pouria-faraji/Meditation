@@ -19,6 +19,9 @@
     <color name="btn_login_color_outer_shadow">#2a3c4d</color>
     <color name="btn_login_color_pressed">#405b74</color>
 
+    <color name="drawer_background">#4b5465</color>
+    <color name="drawer_item">#f6a671</color>
+
     <color name="form_background">#cccccc</color>
     <color name="form_background_selected">#f2f2f2</color>
 

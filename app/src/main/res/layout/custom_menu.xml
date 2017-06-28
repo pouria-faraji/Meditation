@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:id="@+id/action_drawer"
+        android:src="@drawable/ic_action_menu"
+        android:background="?attr/actionBarItemBackground"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:scaleType="centerInside"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"/>
+    <com.blacksite.meditation.view.MyFarsiTextView
+        android:id="@+id/action_bar_title"
+        android:text="خانه"
+        android:background="?attr/actionBarItemBackground"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="wrap_content"
+        android:scaleType="centerInside"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:textColor="#494949"
+        android:gravity="center_vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"/>
+</RelativeLayout>

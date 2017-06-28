@@ -1,6 +1,7 @@
 package com.blacksite.meditation;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -81,7 +82,7 @@ public class SignUpActivity extends AppCompatActivity {
     public void onSignupSuccess() {
         btn_sign_up.setEnabled(true);
         setResult(RESULT_OK, null);
-        finish();
+        launchHomeScreen();
     }
     public void onSignupFailed() {
         Toast.makeText(getBaseContext(), "Sign up failed", Toast.LENGTH_SHORT).show();
@@ -125,6 +126,11 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
         return valid;
+    }
+    private void launchHomeScreen() {
+        //prefManager.setFirstTimeLaunch(false);
+        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+        finish();
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

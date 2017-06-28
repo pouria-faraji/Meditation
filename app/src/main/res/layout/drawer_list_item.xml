@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layoutDirection="rtl"
+    android:weightSum="1">
+    <ImageView
+        android:id="@+id/drawer_icon"
+        android:layout_width="0dp"
+        android:layout_weight="0.25"
+        android:layout_height="fill_parent"
+        android:src="@drawable/ic_home"/>
+    <com.blacksite.meditation.view.MyFarsiTextView
+        android:id="@+id/drawer_title"
+        android:layout_width="0dp"
+        android:layout_weight="0.75"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="0dp"
+        android:textColor="@color/drawer_item"
+        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+        android:text="تست"/>
+</LinearLayout>
+
+    <!--android:background="?android:attr/activatedBackgroundIndicator"
+     android:background="@drawable/drawer_item_background"-->

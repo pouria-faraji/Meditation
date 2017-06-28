@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onLoginSuccess() {
         btn_login.setEnabled(true);
-        finish();
+        launchHomeScreen();
     }
 
     public void onLoginFailed() {
@@ -123,6 +123,11 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         return valid;
+    }
+    private void launchHomeScreen() {
+        //prefManager.setFirstTimeLaunch(false);
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        finish();
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
