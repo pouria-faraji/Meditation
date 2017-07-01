@@ -17,11 +17,14 @@ public class SignUpActivity extends AppCompatActivity {
 
     public EditText fname, lname, email, password;
     RelativeLayout btn_sign_up;
+    private PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        prefManager = new PrefManager(this);
 
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -128,7 +131,7 @@ public class SignUpActivity extends AppCompatActivity {
         return valid;
     }
     private void launchHomeScreen() {
-        //prefManager.setFirstTimeLaunch(false);
+        prefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(SignUpActivity.this, MainActivity.class));
         finish();
     }

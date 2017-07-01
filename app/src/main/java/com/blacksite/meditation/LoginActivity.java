@@ -17,12 +17,16 @@ public class LoginActivity extends AppCompatActivity {
     public EditText _email, _password;
     RelativeLayout btn_login;
 
+    private PrefManager prefManager;
+
     private static final int REQUEST_SIGNUP = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        prefManager = new PrefManager(this);
 
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -125,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
         return valid;
     }
     private void launchHomeScreen() {
-        //prefManager.setFirstTimeLaunch(false);
+        prefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(LoginActivity.this, MainActivity.class));
         finish();
     }

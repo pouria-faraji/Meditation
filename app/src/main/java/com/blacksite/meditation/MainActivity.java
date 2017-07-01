@@ -1,8 +1,10 @@
 package com.blacksite.meditation;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.util.Pair;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -37,12 +39,16 @@ public class MainActivity extends AppCompatActivity {
     private CharSequence mDrawerTitle;
     private ActionBarDrawerToggle mDrawerToggle;
 
+    private PrefManager prefManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         createMenu();
+
+        prefManager = new PrefManager(this);
 
         mainPageDrawerTitles = new String[]{getString(R.string.home), getString(R.string.logout)};
         mTitle = mDrawerTitle = getTitle();
@@ -161,16 +167,21 @@ public class MainActivity extends AppCompatActivity {
                 drawer_fragment = new MainFragment();
                 break;
             case 1:
-                drawer_fragment = new MainFragment();
+                //drawer_fragment = new MainFragment();
+                launchWelcomeScreen();
                 break;
             default:
                 break;
         }
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.content_frame, drawer_fragment);
+        fragmentTransaction.commit();
         // Insert the fragment by replacing any existing fragment
-        FragmentManager fragmentManager = getFragmentManager();
+        /*FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame, drawer_fragment)
-                .commit();
+                .commit();*/
 
         // Highlight the selected item, update the title, and close the drawer
         mDrawerList.setItemChecked(position, true);
@@ -182,5 +193,10 @@ public class MainActivity extends AppCompatActivity {
     public void setTitle(CharSequence title) {
         mTitle = title;
         getSupportActionBar().setTitle(mTitle);
+    }
+    private void launchWelcomeScreen() {
+        prefManager.setFirstTimeLaunch(false);
+        startActivity(new Intent(MainActivity.this, WelcomeActivity.class));
+        finish();
     }
 }
