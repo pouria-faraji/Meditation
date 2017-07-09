@@ -56,7 +56,7 @@ public class MainFragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new TimelineFragment(), "پیشرفت");
+        adapter.addFragment(new ProgressFragment(), "پیشرفت");
         //adapter.addFragment(new TimelineFragment(), "دوستان");
         adapter.addFragment(new TimelineFragment(), "جدول زمانی");
         viewPager.setAdapter(adapter);

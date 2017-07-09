@@ -169,7 +169,8 @@ public class MainActivity extends AppCompatActivity {
             case 1:
                 //drawer_fragment = new MainFragment();
                 launchWelcomeScreen();
-                break;
+                return;
+                //break;
             default:
                 break;
         }
@@ -195,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(mTitle);
     }
     private void launchWelcomeScreen() {
-        prefManager.setFirstTimeLaunch(false);
+        prefManager.setFirstTimeLaunch(true);
         startActivity(new Intent(MainActivity.this, WelcomeActivity.class));
         finish();
     }

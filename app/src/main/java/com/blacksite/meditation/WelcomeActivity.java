@@ -49,7 +49,7 @@ public class WelcomeActivity extends AppCompatActivity {
         prefManager = new PrefManager(this);
         if (!prefManager.isFirstTimeLaunch()) {
             launchHomeScreen();
-            finish();
+            WelcomeActivity.this.finish();
         }
         // Making notification bar transparent
         /*if (Build.VERSION.SDK_INT >= 21) {
@@ -136,7 +136,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private void launchHomeScreen() {
         //prefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-        finish();
+        WelcomeActivity.this.finish();
     }
 
     //  viewpager change listener

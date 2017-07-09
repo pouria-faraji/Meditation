@@ -1,12 +1,12 @@
 package com.blacksite.meditation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by pouria on 7/1/2017.
@@ -48,7 +48,9 @@ public class TimeLineListAdapter extends BaseAdapter {
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, String.valueOf(i), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, String.valueOf(i), Toast.LENGTH_SHORT).show();
+                Intent player_intent = new Intent(mContext, AudioActivity.class);
+                mContext.startActivity(player_intent);
             }
         });
 

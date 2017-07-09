@@ -132,8 +132,11 @@ public class SignUpActivity extends AppCompatActivity {
     }
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
-        finish();
+        Intent home_intent = new Intent(SignUpActivity.this, MainActivity.class);
+        home_intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        home_intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(home_intent);
+        SignUpActivity.this.finish();
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

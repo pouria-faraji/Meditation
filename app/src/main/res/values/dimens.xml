@@ -18,8 +18,8 @@
     <dimen name="tab_padding_bottom">16dp</dimen>
     <dimen name="tab_label">14sp</dimen>
     <dimen name="custom_tab_layout_height">72dp</dimen>
-    
-    <dimen name="timeline_item_text_size">22sp</dimen>
-    <dimen name="timeline_item_stroke">7dp</dimen>
-    <dimen name="timeline_item_size">60dp</dimen>
+
+    <dimen name="timeline_item_text_size">19sp</dimen>
+    <dimen name="timeline_item_stroke">5dp</dimen>
+    <dimen name="timeline_item_size">50dp</dimen>
 </resources>
