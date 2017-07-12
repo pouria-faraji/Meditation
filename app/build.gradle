@@ -35,4 +35,6 @@ dependencies {
     compile 'com.android.support:support-v4:23.4.0'
     compile 'com.afollestad:easyvideoplayer:0.3.0'
     compile 'com.github.rtoshiro.fullscreenvideoview:fullscreenvideoview:1.1.2'
+    compile 'net.the4thdimension:audio-wife:1.0.3'
+    //compile 'me.tankery.lib:circularSeekBar:1.1.3'
 }

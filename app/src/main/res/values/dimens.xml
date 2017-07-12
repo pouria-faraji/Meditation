@@ -22,4 +22,8 @@
     <dimen name="timeline_item_text_size">19sp</dimen>
     <dimen name="timeline_item_stroke">5dp</dimen>
     <dimen name="timeline_item_size">50dp</dimen>
+
+    <dimen name="audio_player_seek_bar_radius">200dp</dimen>
+    <dimen name="audio_player_seek_bar_stroke_width">35dp</dimen>
+    <dimen name="audio_player_seek_bar_button_control">90dp</dimen>
 </resources>

@@ -53,4 +53,7 @@
         <item>@color/dot_dark_screen3</item>
         <item>@color/dot_dark_screen4</item>
     </array>
+
+    <color name="audio_player_seek_bar_circle">#bc9e65</color>
+    <color name="audio_player_seek_bar_progress">#f9e4bc</color>
 </resources>
