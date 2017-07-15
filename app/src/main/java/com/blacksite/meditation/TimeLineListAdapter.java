@@ -50,6 +50,7 @@ public class TimeLineListAdapter extends BaseAdapter {
             public void onClick(View view) {
                 //Toast.makeText(mContext, String.valueOf(i), Toast.LENGTH_SHORT).show();
                 Intent player_intent = new Intent(mContext, AudioActivity.class);
+                player_intent.putExtra("title", title[i]);
                 mContext.startActivity(player_intent);
             }
         });

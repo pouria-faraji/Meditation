@@ -3,14 +3,21 @@ package com.blacksite.meditation;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.blacksite.meditation.view.MyFarsiTextView;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -32,15 +39,26 @@ public class AudioActivity extends AppCompatActivity {//} implements MediaPlayer
     private int audio_current_position = 0;
     private Handler mHandler = new Handler();
     private String audio_uri;
+    private RelativeLayout close_btn;
+    private MyFarsiTextView audio_activity_desc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio);
 
+        getSupportActionBar().hide();
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.audio_activity_status_bar));
+        }*/
+
         seekBar = (CircularSeekBar)findViewById(R.id.audio_player_seek_bar);
         play_button = findViewById(R.id.audio_play);
         pause_button = findViewById(R.id.audio_pause);
         audio_runtime = (TextView)findViewById(R.id.audio_runtime);
+        close_btn = (RelativeLayout)findViewById(R.id.close_btn);
+        audio_activity_desc = (MyFarsiTextView)findViewById(R.id.audio_activity_desc);
 
         audio_uri = "android.resource://" + getPackageName() + "/" + R.raw.take10_1_audio;
 
@@ -58,6 +76,16 @@ public class AudioActivity extends AppCompatActivity {//} implements MediaPlayer
             }
         });
 
+        close_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AudioActivity.this.finish();
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
+
+        String title = getIntent().getStringExtra("title");
+        audio_activity_desc.setText(String.format("جلسه %s/10", title));
         Intent video_intent = new Intent(this, VideoActivity.class);
         this.startActivityForResult(video_intent, VIDEO_ACTIVITY_REQUEST_CODE);
     }
@@ -82,6 +110,17 @@ public class AudioActivity extends AppCompatActivity {//} implements MediaPlayer
         play_button.setVisibility(View.GONE);
         pause_button.setVisibility(View.VISIBLE);
         mHandler.postDelayed(UpdateProgressBar, 100);
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                play_button.setVisibility(View.VISIBLE);
+                pause_button.setVisibility(View.GONE);
+                mp.seekTo(0);
+                mp.pause();
+                AudioActivity.this.finish();
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -124,7 +163,7 @@ public class AudioActivity extends AppCompatActivity {//} implements MediaPlayer
         super.onPause();
         if(mp != null) {
             if (mp.isPlaying()) {
-                mp.pause();
+                //mp.pause();
             }
         }
     }
@@ -133,11 +172,20 @@ public class AudioActivity extends AppCompatActivity {//} implements MediaPlayer
         super.onStop();
         if(mp != null) {
             if (mp.isPlaying()) {
-                mp.stop();
+                //mp.stop();
             }
         }
+        //mHandler.removeCallbacks(UpdateProgressBar);
+        //seekBar.setProgress(0);
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
         mHandler.removeCallbacks(UpdateProgressBar);
         seekBar.setProgress(0);
+        if(mp != null){
+            mp.release();
+        }
     }
     public String millisecondsToTimer(long milliseconds){
         String finalString = "";

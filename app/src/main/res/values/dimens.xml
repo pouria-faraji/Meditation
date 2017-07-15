@@ -26,4 +26,10 @@
     <dimen name="audio_player_seek_bar_radius">200dp</dimen>
     <dimen name="audio_player_seek_bar_stroke_width">35dp</dimen>
     <dimen name="audio_player_seek_bar_button_control">90dp</dimen>
+
+    <dimen name="audio_activity_close_btn_layout">60dp</dimen>
+    <dimen name="audio_activity_close_btn_img">30dp</dimen>
+    <dimen name="audio_activity_title">17sp</dimen>
+    <dimen name="audio_activity_desc">15sp</dimen>
+    <dimen name="audio_activity_runtime_desc">18sp</dimen>
 </resources>

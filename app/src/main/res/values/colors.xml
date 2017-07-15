@@ -56,4 +56,8 @@
 
     <color name="audio_player_seek_bar_circle">#bc9e65</color>
     <color name="audio_player_seek_bar_progress">#f9e4bc</color>
+
+    <color name="audio_activity_close_btn_pressed">#8aededed</color>
+    <color name="audio_activity_status_bar">#a38857</color>
+    <color name="video_activity_header_background">#21000000</color>
 </resources>

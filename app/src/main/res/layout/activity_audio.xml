@@ -8,9 +8,59 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="8dp"
     android:background="@color/timeline_background"
     tools:context="com.blacksite.meditation.AudioActivity">
+
+    <RelativeLayout
+        android:id="@+id/audio_activity_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+        <RelativeLayout
+            android:id="@+id/close_btn"
+            android:layout_width="@dimen/audio_activity_close_btn_layout"
+            android:layout_height="@dimen/audio_activity_close_btn_layout"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/audio_activity_close_btn_background"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="@dimen/audio_activity_close_btn_img"
+                android:layout_height="@dimen/audio_activity_close_btn_img"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_close"/>
+        </RelativeLayout>
+        <com.blacksite.meditation.view.MyFarsiTextView
+            android:id="@+id/audio_activity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/audio_activity_title"
+            android:layout_marginBottom="30dp"
+            android:text="سطح 1"/>
+    </RelativeLayout>
+    <com.blacksite.meditation.view.MyFarsiTextView
+        android:id="@+id/audio_activity_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/audio_activity_desc"
+        android:layout_below="@+id/audio_activity_header"
+        android:layout_marginBottom="10dp"
+        android:text="جلسه 1/10"/>
+    <com.blacksite.meditation.view.MyFarsiTextView
+        android:id="@+id/audio_activity_runtime_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/audio_activity_runtime_desc"
+        android:layout_below="@+id/audio_activity_desc"
+        android:text="(10 دقیقه)"/>
 
     <RelativeLayout
         android:id="@+id/audio_player_seek_bar_layout"

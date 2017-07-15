@@ -17,5 +17,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </FrameLayout>
-
+    <RelativeLayout
+        android:id="@+id/video_activity_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/video_activity_header_background">
+        <RelativeLayout
+            android:id="@+id/video_close_btn"
+            android:layout_width="@dimen/audio_activity_close_btn_layout"
+            android:layout_height="@dimen/audio_activity_close_btn_layout"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/audio_activity_close_btn_background"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="@dimen/audio_activity_close_btn_img"
+                android:layout_height="@dimen/audio_activity_close_btn_img"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_close"/>
+        </RelativeLayout>
+        <com.blacksite.meditation.view.MyFarsiTextView
+            android:id="@+id/video_activity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/audio_activity_title"
+            android:textColor="@color/title_color"
+            android:text="@string/app_name"/>
+    </RelativeLayout>
 </RelativeLayout>
