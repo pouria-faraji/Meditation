@@ -1,4 +1,4 @@
-package com.blacksite.meditation;
+package com.blacksite.meditation.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.blacksite.meditation.R;
+import com.blacksite.meditation.activities.AudioActivity;
 
 /**
  * Created by pouria on 7/1/2017.

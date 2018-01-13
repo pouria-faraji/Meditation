@@ -1,4 +1,4 @@
-package com.blacksite.meditation;
+package com.blacksite.meditation.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.blacksite.meditation.preference.PrefManager;
+import com.blacksite.meditation.R;
 
 public class SignUpActivity extends AppCompatActivity {
 

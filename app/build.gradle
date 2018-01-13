@@ -9,7 +9,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
-        versionName "1.5"
+        versionName "1.6"
     }
     buildTypes {
         release {
@@ -17,7 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             applicationVariants.all { variant ->
                 variant.outputs.each { output ->
-                    def fileName = "Meditation_1.5"
+                    def fileName = "Meditation_1.6"
                     output.outputFile = new File(output.outputFile.parent,
                             output.outputFile.name.replace("-release", "-" + fileName)
                     )

@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="8dp"
     android:background="@color/timeline_background"
-    tools:context="com.blacksite.meditation.AudioActivity">
+    tools:context=".activities.AudioActivity">
 
     <RelativeLayout
         android:id="@+id/audio_activity_header"

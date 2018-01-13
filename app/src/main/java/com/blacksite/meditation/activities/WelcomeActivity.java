@@ -1,4 +1,4 @@
-package com.blacksite.meditation;
+package com.blacksite.meditation.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,13 +18,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.blacksite.meditation.preference.PrefManager;
+import com.blacksite.meditation.R;
 import com.blacksite.meditation.view.MyFarsiTextView;
-import com.blacksite.meditation.view.MyTextView;
 
 import java.util.Locale;
 

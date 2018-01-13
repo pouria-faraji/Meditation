@@ -1,4 +1,4 @@
-package com.blacksite.meditation;
+package com.blacksite.meditation.preference;
 
 import android.content.Context;
 import android.content.SharedPreferences;

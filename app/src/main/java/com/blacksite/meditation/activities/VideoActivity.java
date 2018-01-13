@@ -1,4 +1,4 @@
-package com.blacksite.meditation;
+package com.blacksite.meditation.activities;
 
 import android.content.res.Configuration;
 import android.media.MediaPlayer;
@@ -11,8 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.afollestad.easyvideoplayer.EasyVideoCallback;
-import com.afollestad.easyvideoplayer.EasyVideoPlayer;
+import com.blacksite.meditation.R;
 import com.github.rtoshiro.view.video.FullscreenVideoLayout;
 
 import java.io.IOException;

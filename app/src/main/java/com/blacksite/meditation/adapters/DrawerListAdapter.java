@@ -1,4 +1,4 @@
-package com.blacksite.meditation;
+package com.blacksite.meditation.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.blacksite.meditation.R;
 
 /**
  * Created by pouria on 6/28/2017.

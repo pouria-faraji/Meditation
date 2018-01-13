@@ -1,4 +1,4 @@
-package com.blacksite.meditation;
+package com.blacksite.meditation.fragments;
 
 
 import android.os.Bundle;
@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import java.util.Collections;
+import com.blacksite.meditation.R;
+import com.blacksite.meditation.adapters.TimeLineListAdapter;
 
 
 /**

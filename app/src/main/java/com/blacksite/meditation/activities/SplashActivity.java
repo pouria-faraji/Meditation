@@ -1,7 +1,6 @@
-package com.blacksite.meditation;
+package com.blacksite.meditation.activities;
 
 import android.annotation.TargetApi;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.graphics.Typeface;
@@ -9,13 +8,13 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.blacksite.meditation.R;
 import com.blacksite.meditation.view.MyTextView;
 
 public class SplashActivity extends AppCompatActivity {
@@ -74,8 +73,6 @@ public class SplashActivity extends AppCompatActivity {
                     }
                     Intent intent = new Intent(SplashActivity.this,
                             WelcomeActivity.class);
-                    /*ActivityOptions options =
-                            ActivityOptions.makeCustomAnimation(SplashActivity.this, R.anim.fade_in, R.anim.fade_out);*/
                     startActivity(intent);
                     SplashActivity.this.finish();
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
